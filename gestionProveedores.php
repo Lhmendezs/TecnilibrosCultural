@@ -20,33 +20,7 @@
         }
     </script>
     <!-- Barra de tareas -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-1 shadow" id="menu">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                    <a class="navbar-brand" href="inicio.php">
-                        <img src="imagenes/icon.png" alt="" style="height: 30px" />
-                        <span class="fs-5 fw-bold mx-auto">Tecnilibros Cultural</span>
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gestionLibros.php">Libros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="gestionProveedores.php" style="text-decoration: underline;">Proveedores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gestionProveedores.php">Ventas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gestionProveedores.php">Cerrar Sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("vistas/navbar.php")?>
 
     <div class="gestionary-page">
 
@@ -90,7 +64,6 @@
                         <button type="submit" name="submit" value="CrearProveedor" class="btn btn-primary">Añadir</button>
                     </form>
                 </div>
-
                 <div class="col-sm-8 border ">
                     <h3 class="pt-1">Busqueda</h3>
                     <table class="table table-striped col-4">

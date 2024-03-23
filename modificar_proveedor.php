@@ -19,27 +19,7 @@ $sql = $conexion->query("SELECT * FROM proveedor WHERE id_proveedor = $id");
 
 <body>
     <!-- Barra de tareas -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-1 shadow" id="menu">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                    <a class="navbar-brand" href="index.php">
-                        <img src="imagenes/icon.png" alt="" style="height: 30px" />
-                        <span class="fs-5 fw-bold mx-auto">Tecnilibros Cultural</span>
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="gestionLibros.php" aria-current="page">Libros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gestionProveedores.php">Proveedores</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("vistas/navbar.php")?>
 
     <div class="container">
         <h1>Modificar Proveedor</h1>
