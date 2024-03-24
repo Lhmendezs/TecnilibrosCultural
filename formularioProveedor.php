@@ -39,7 +39,7 @@
     <div class="container">
     <h1>Añadir Proveedor</h1>
     <?php 
-     include("añadirProveedor.php");
+     include("anadirProveedor.php");
     ?>
         <form  class="libroA-form" method="post">
             <div class="mb-3">

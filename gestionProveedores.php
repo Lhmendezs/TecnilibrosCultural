@@ -121,22 +121,22 @@
 
                     </tr>
                     <?php
-                    include("Conexion/conexion_bd.php");
-                    $sql = $conexion->query("SELECT * from proveedor");
-                    while ($datos = $sql->fetch_object()) { ?>
-                        <tr>
-                            <td><?= $datos->id_proveedor ?></td>
-                            <td><?= $datos->nombre_proveedor ?></td>
-                            <td><?= $datos->direccion_proveedor ?></td>
-                            <td><?= $datos->correo_proveedor ?></td>
-                            <td><?= $datos->telefono_proveedor ?></td>
-                            <td>
-                                <a href="modificar_proveedor.php?id=<?= $datos->id_proveedor ?>" class="bi bi-pencil-square">Editar</a>
-                                <a onclick="return eliminar()" href="gestionProveedores.php?id=<?= $datos->id_proveedor ?>" class="bi bi-trash3-fill me-1" style="color: red;">Eliminar</a>
-                            </td>
-                        </tr>
-                    <?php
+                    include("proveedorGestion.php");
+                    $registros = mostrarProveedores();
+                    foreach($registros as $registro){
+                       echo "<tr>";
+                       echo "<td>".$registro['id_proveedor']."</td>";
+                       echo"<td> ".$registro['nombre_proveedor']."</td>";
+                       echo "<td> ".$registro['direccion_proveedor']." </td>";
+                       echo"<td> ".$registro['correo_proveedor']."";
+                       echo "<td> ".$registro['telefono_proveedor']."</td>";
+                       echo "<td>
+                            <a href='modificar_proveedor.php?id=".$registro['id_proveedor']."' class='bi bi-pencil-square'>Editar</a>
+                            <a onclick='return eliminar()' href='gestionProveedores.php?id=".$registro['id_proveedor']."' class='bi bi-trash3-fill me-1' style='color: red;'>Eliminar</a>
+                        </td>";
+                        echo "</tr>";
                     }
+                    
                     ?>
 
                     <!-- Agregar más filas con datos de libros -->
