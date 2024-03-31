@@ -34,7 +34,7 @@
                         <button class="btn btn-outline-success btn-sm" type="submit" name="enviar">Buscar</button>
                         <a class="a-ref ms-1 bi bi-plus-square" href="formulario_libro.php" style=" text-decoration: none"> Añadir Libro</a>
                     </form>
-                    <?php include("Controlador/eliminarLibro.php")?>
+                    <?php include("Controlador/eliminarLibro.php") ?>
 
                     <h4>Busqueda</h4>
                     <table class="table table-striped col-4">
@@ -98,7 +98,7 @@
                                         <td><?= $datos->categorias ?></td>
                                         <td><?= $datos->autores ?></td>
                                         <td>
-                                            <a href="modificar_libro.php?id=<?= $datos->id_libro ?>" class="bi bi-pencil-square">Editar</a>
+                                            <a href="modificarLibro.php?idBooks=<?= $datos->id_libro ?>" class="bi bi-pencil-square">Editar</a>
                                             <!-- <a onclick="return eliminar()" href="gestionLibros.php?id=<?= $datos->id_libro ?>" class="bi bi-trash3-fill me-1" style="color: red;">Eliminar</a> -->
                                         </td>
                                     </tr>
@@ -169,7 +169,7 @@
                             <td><?= $datos->categorias ?></td>
                             <td><?= $datos->autores ?></td>
                             <td>
-                                <a href="modificar_libro.php?id=<?= $datos->id_libro ?>" class="bi bi-pencil-square">Editar</a>
+                                <a href="modificarLibro.php?idBooks=<?= $datos->id_libro ?>" class="bi bi-pencil-square">Editar</a>
                                 <!-- <a onclick="return eliminar()" href="gestionLibros.php?id=<?= $datos->id_libro ?>" class="bi bi-trash3-fill me-1" style="color: red;">Eliminar</a> -->
                             </td>
                         </tr>
