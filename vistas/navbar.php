@@ -35,7 +35,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionProveedores.php">Cerrar Sesión</a>
+                        <a class="nav-link" href="cerrarsesion.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
