@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2024 a las 19:54:34
+-- Tiempo de generación: 25-05-2024 a las 02:43:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -61,7 +61,9 @@ INSERT INTO `autor` (`id_autor`, `nombre_autor`) VALUES
 (22, 'Alejandro Dumas'),
 (23, ' Auguste Maquet'),
 (24, 'J. B. Fellens '),
-(25, 'EL pibe');
+(25, 'EL pibe'),
+(26, 'Akira Toriyama'),
+(27, 'pepito');
 
 -- --------------------------------------------------------
 
@@ -126,7 +128,9 @@ INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`) VALUES
 (50, 'Matematica Aplicada'),
 (51, 'informatica'),
 (52, 'Ficción Histórica'),
-(53, 'FIFA');
+(53, 'FIFA'),
+(54, 'camaras'),
+(55, 'pruebacat');
 
 -- --------------------------------------------------------
 
@@ -150,7 +154,7 @@ CREATE TABLE `libros` (
 
 INSERT INTO `libros` (`id_libro`, `id_titulo`, `cantidad_disponible`, `num_edicion`, `precio`, `ISBN`, `librero`) VALUES
 (1, 1, 1, 1, 19900, 12134156, '1'),
-(2, 2, 1, 2, 30000, 121341562, 'b'),
+(2, 2, 1, 2, 35000, 121341562, 'b'),
 (3, 3, 3, 12, 15000, 123, '2b'),
 (4, 2, 1, 1, 30000, 1234, '1'),
 (5, 2, 1, 2, 3000, 123456, '1'),
@@ -165,7 +169,10 @@ INSERT INTO `libros` (`id_libro`, `id_titulo`, `cantidad_disponible`, `num_edici
 (14, 1, 2, 3, 435, 1235, '12353'),
 (15, 20, 1, 1, 220000, 9866256, '1'),
 (16, 21, 5, 12, 5000, 124566, '124as'),
-(17, 22, 1, 1, 12432, 1235, '12');
+(17, 22, 1, 1, 12432, 1235, '12'),
+(18, 23, 1, 1, 2000, 11343, '123a'),
+(19, 1, 2, 3, 12345, 123465, '25a'),
+(20, 1, 23, 2, 234555, 11111, '123aa');
 
 -- --------------------------------------------------------
 
@@ -204,9 +211,6 @@ INSERT INTO `libro_autor` (`id_libro_autor`, `id_libro`, `id_autor`) VALUES
 (22, 15, 24),
 (23, 1, 1),
 (24, 1, 1),
-(25, 2, 5),
-(26, 2, 6),
-(27, 2, 6),
 (31, 3, 17),
 (32, 3, 7),
 (33, 3, 7),
@@ -223,7 +227,19 @@ INSERT INTO `libro_autor` (`id_libro_autor`, `id_libro`, `id_autor`) VALUES
 (67, 17, 11),
 (68, 17, 16),
 (69, 17, 21),
-(70, 17, 21);
+(70, 17, 21),
+(71, 18, 26),
+(72, 18, 26),
+(73, 2, 5),
+(74, 2, 6),
+(75, 2, 6),
+(76, 19, 1),
+(77, 19, 13),
+(78, 19, 13),
+(79, 20, 1),
+(80, 20, 11),
+(81, 20, 27),
+(82, 20, 27);
 
 -- --------------------------------------------------------
 
@@ -262,9 +278,6 @@ INSERT INTO `libro_categoria` (`id_libro_categoria`, `id_libro`, `id_categoria`)
 (26, 1, 3),
 (27, 1, 4),
 (28, 1, 4),
-(29, 2, 1),
-(30, 2, 10),
-(31, 2, 10),
 (35, 3, 4),
 (36, 3, 7),
 (37, 3, 7),
@@ -279,7 +292,22 @@ INSERT INTO `libro_categoria` (`id_libro_categoria`, `id_libro`, `id_categoria`)
 (69, 17, 11),
 (70, 17, 38),
 (71, 17, 53),
-(72, 17, 53);
+(72, 17, 53),
+(73, 18, 1),
+(74, 18, 5),
+(75, 18, 6),
+(76, 18, 6),
+(77, 2, 1),
+(78, 2, 10),
+(79, 2, 10),
+(80, 19, 1),
+(81, 19, 3),
+(82, 19, 54),
+(83, 19, 54),
+(84, 20, 13),
+(85, 20, 3),
+(86, 20, 55),
+(87, 20, 55);
 
 -- --------------------------------------------------------
 
@@ -316,7 +344,7 @@ INSERT INTO `proveedor` (`id_proveedor`, `nombre_proveedor`, `direccion_proveedo
 (14, 'John Doe Company', 'calle 13 residente', 'adfasdfr34ee@jmdkslajf.cs', '344425'),
 (17, 'yin yan', 'poh 12 calle 56', 'adfasdfr34ee@jmdkslajf.cs', '13245555'),
 (20, 'camilo', 'simon y juan 13', 'asdfasdf@o.com', '12345'),
-(21, 'juan', 'adfasd', 'asdfqwerQksjf2@okc.es', '1234');
+(22, 'Post Malone', 'Calle 12 n  1 Tunja', 'postMalone@gmail.com', '34434666');
 
 -- --------------------------------------------------------
 
@@ -342,6 +370,7 @@ INSERT INTO `titulo_libro` (`id_titulo`, `nombre`) VALUES
 (22, 'Copa America'),
 (6, 'Crimen y castigo'),
 (5, 'Don Quijote de la Mancha'),
+(23, 'Dragon Ball'),
 (8, 'El alquimista'),
 (2, 'El principito'),
 (3, 'El señor de los anillos'),
@@ -351,9 +380,11 @@ INSERT INTO `titulo_libro` (`id_titulo`, `nombre`) VALUES
 (13, 'Instructivo de como reparar maquinas de coser'),
 (12, 'La Biblia'),
 (7, 'La casa de los espíritus'),
+(24, 'linux 2'),
 (18, 'Los mejores 10\'s'),
 (20, 'Los tres mosqueteros'),
-(17, 'Metodos numericos para ingenieros');
+(17, 'Metodos numericos para ingenieros'),
+(25, 'motorola');
 
 -- --------------------------------------------------------
 
@@ -383,7 +414,8 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `rol`, `telefono_usuario
 (13, 'gin', 'Administrador', '', 'gin@gmail.com', '123'),
 (14, '1', 'Empleado', '', '1@.com', '123'),
 (15, 'invento1', 'Administrador', '', 'inv@hot.com', '123'),
-(16, 'oli', 'Administrador', '', 'oliq@s.com', '123');
+(16, 'oli', 'Administrador', '', 'oliq@s.com', '123'),
+(17, 'Luis Mendez', 'Administrador', '', 'luis789@gmail.com', '123');
 
 --
 -- Índices para tablas volcadas
@@ -452,49 +484,49 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `libro_autor`
 --
 ALTER TABLE `libro_autor`
-  MODIFY `id_libro_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_libro_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT de la tabla `libro_categoria`
 --
 ALTER TABLE `libro_categoria`
-  MODIFY `id_libro_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_libro_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `titulo_libro`
 --
 ALTER TABLE `titulo_libro`
-  MODIFY `id_titulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_titulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_usuario` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas

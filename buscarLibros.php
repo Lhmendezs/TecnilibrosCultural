@@ -14,7 +14,7 @@
     <div class="container-fluid">
         
         <div class="row border-bottom border-top-0  border-secondary">
-            <h3 class="mt-2 mb-1 ">Busca titulo</h3>
+            <h3 class="mt-2 mb-1 ">Busca título</h3>
             <!-- COL -->
             <div class="col-sm-4 mb-1">
                 <form>
@@ -30,7 +30,7 @@
                 <table class="table table-striped me-0">
                     <tr>
                         <th>ID</th>
-                        <th>TITULO DEL LIBRO</th>
+                        <th>TÍTULO DEL LIBRO</th>
                     </tr>
                     <?php
                     include("Conexion/conexion_bd.php");
@@ -71,7 +71,7 @@
 
         <!-- Crear nueva categoria -->
         <div class="row border-bottom border-top-0 border-secondary">
-            <h3 class="mt-2 mb-1 d-flex">Busca Categoria</h3>
+            <h3 class="mt-2 mb-1 d-flex">Busca Categoría</h3>
             <!-- COL -->
             <div class="col-sm-4 mb-1">
                 <form>

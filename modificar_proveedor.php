@@ -50,7 +50,7 @@ $sql = $conexion->query("SELECT * FROM proveedor WHERE id_proveedor = $id");
             ?>
 
 
-            <button type="submit" name="btnmodificar" value="ModificarProveedor" class="btn btn-primary">Modificar Libro</button>
+            <button type="submit" name="btnmodificar" value="ModificarProveedor" class="btn btn-primary">Modificar proveedor</button>
         </form>
         <a href="gestionProveedores.php" class="bi bi-arrow-return-left">Regresar</button></a>
     </div>

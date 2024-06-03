@@ -44,6 +44,7 @@
                             <th>CANTIDAD DISPONIBLE</th>
                             <th>EDICION</th>
                             <th>PRECIO</th>
+                            <th>MELI</th>
                             <th>ISBN</th>
                             <th>LIBRERO</th>
                             <th>CATEGORIA</th>
@@ -65,6 +66,7 @@
                     l.cantidad_disponible,
                     l.num_edicion,
                     l.precio,
+                    l.Meli,
                     l.ISBN,
                     l.librero,
                     GROUP_CONCAT(DISTINCT c.nombre_categoria SEPARATOR ', ') AS categorias,
@@ -93,6 +95,7 @@
                                         <td><?= $datos->cantidad_disponible ?></td>
                                         <td><?= $datos->num_edicion ?></td>
                                         <td><?= $datos->precio ?></td>
+                                        <td><?= $datos->Meli ?></td>
                                         <td><?= $datos->ISBN ?></td>
                                         <td><?= $datos->librero ?></td>
                                         <td><?= $datos->categorias ?></td>
@@ -122,6 +125,7 @@
                         <th>CANTIDAD DISPONIBLE</th>
                         <th>EDICION</th>
                         <th>PRECIO</th>
+                        <th>MELI</th>
                         <th>ISBN</th>
                         <th>LIBRERO</th>
                         <th>CATEGORIA</th>
@@ -139,6 +143,7 @@
                     l.cantidad_disponible,
                     l.num_edicion,
                     l.precio,
+                    l.Meli,
                     l.ISBN,
                     l.librero,
                     GROUP_CONCAT(DISTINCT c.nombre_categoria SEPARATOR ', ') AS categorias,
@@ -164,6 +169,7 @@
                             <td><?= $datos->cantidad_disponible ?></td>
                             <td><?= $datos->num_edicion ?></td>
                             <td><?= $datos->precio ?></td>
+                            <td><?= $datos->Meli ?></td>
                             <td><?= $datos->ISBN ?></td>
                             <td><?= $datos->librero ?></td>
                             <td><?= $datos->categorias ?></td>

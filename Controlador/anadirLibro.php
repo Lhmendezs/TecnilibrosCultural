@@ -2,7 +2,8 @@
 // Verificar si se ha enviado el formulario de registro
 if(isset($_POST['submit']) && $_POST['submit'] == 'CrearLibro') {
     // Verificar si los campos del formulario están vacíos
-    if(empty($_POST['titulo']) || empty($_POST['cantidad']) || empty($_POST['edicion']) || empty($_POST['precio']) || empty($_POST['isbn'])
+    if(empty($_POST['titulo']) || !isset($_POST['cantidad']) || empty($_POST['edicion']) || empty($_POST['precio'])  || empty($_POST['meli'])
+    || empty($_POST['isbn'])
     || empty($_POST['categoria'])|| empty($_POST['autor']) || empty($_POST['librero'])) {
          // Mensaje de error para la alerta
         
@@ -15,6 +16,7 @@ if(isset($_POST['submit']) && $_POST['submit'] == 'CrearLibro') {
         $cantidad = $_POST['cantidad'];
         $edicion= $_POST['edicion'];
         $precio = $_POST['precio'];
+        $meli = $_POST['meli'];
         $isbn = $_POST['isbn'];
         $librero = $_POST['librero'];
         $categoria = $_POST['categoria'];
@@ -37,7 +39,7 @@ if(isset($_POST['submit']) && $_POST['submit'] == 'CrearLibro') {
 
 
         // Consulta preparada para insertar datos en la base de datos
-        $query = "INSERT INTO libros (id_titulo, cantidad_disponible, num_edicion, precio, ISBN, librero) VALUES (?, ?, ?, ?,?,?)";
+        $query = "INSERT INTO libros (id_titulo, cantidad_disponible, num_edicion, precio, MeLi, ISBN, librero) VALUES (?, ?, ?, ?,?,?,?)";
         $statement = mysqli_prepare($conexion, $query);
         
         // Verificar si la preparación de la consulta tuvo éxito
@@ -47,7 +49,7 @@ if(isset($_POST['submit']) && $_POST['submit'] == 'CrearLibro') {
         }
 
         // Vincular los parámetros
-        mysqli_stmt_bind_param($statement, "iiiiis", $titulo, $cantidad,$edicion, $precio,$isbn,$librero);
+        mysqli_stmt_bind_param($statement, "iiiisis", $titulo, $cantidad,$edicion, $precio,$meli, $isbn,$librero);
 
         // Ejecutar la consulta
         $result = mysqli_stmt_execute($statement);

@@ -9,6 +9,7 @@ tl.nombre AS nombre_libro,
 l.cantidad_disponible,
 l.num_edicion,
 l.precio,
+l.MeLi,
 l.ISBN,
 l.librero,
 GROUP_CONCAT(DISTINCT c.id_categoria SEPARATOR ', ') AS categorias,
@@ -69,6 +70,10 @@ WHERE l.id_libro =$id;");
                 <div class="mb-3">
                     <label class="form-label">PRECIO</label>
                     <input type="number" class="form-control" name="bPrecio" value="<?=$datos->precio?>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">MeLi</label>
+                    <input type="text" class="form-control" name="bMeLi" value="<?=$datos->MeLi?>" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">ISBN</label>

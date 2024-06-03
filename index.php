@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnilibros Cultural</title>
     <link rel="icon" href="imagenes/icon.png" />
-    <link rel="stylesheet" href="http://localhost/tecnilibros_cultural-master/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/pruebas/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilos/login.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -99,7 +99,7 @@
         });
     </script>
 
-    <script src="http://localhost/tecnilibros_cultural-master/assets/js/bootstrap.min.js"></script>
+    <script src="http://localhost/pruebas/assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,9 @@
 <?php
 if (!empty($_POST["btnmodificarBook"])) {
     if (
-        empty($_POST['bTitulo']) || empty($_POST['bCantidad']) || empty($_POST['bEdicion']) || empty($_POST['bPrecio']) ||
-        empty($_POST['bIsbn']) || empty($_POST['bLibrero']) || empty($_POST['bCtegoria']) || empty($_POST['bAutor'])
+        empty($_POST['bTitulo']) || !isset($_POST['bCantidad']) || empty($_POST['bEdicion']) || empty($_POST['bPrecio']) ||
+        empty($_POST['bMeLi'])||empty($_POST['bIsbn']) || empty($_POST['bLibrero']) || empty($_POST['bCtegoria']) ||
+        empty($_POST['bAutor'])
     ) {
         // Mensaje de error para la alerta
         $mensaje = "Error: Uno de los campos está vacío.";
@@ -18,6 +19,7 @@ if (!empty($_POST["btnmodificarBook"])) {
         $cantidad = $_POST['bCantidad'];
         $edicion = $_POST['bEdicion'];
         $precio = $_POST['bPrecio'];
+        $MeLi = $_POST['bMeLi'];
         $isb=$_POST['bIsbn'];
         $librero=$_POST['bLibrero'];
         $categoria=$_POST['bCtegoria'];
@@ -38,7 +40,7 @@ if (!empty($_POST["btnmodificarBook"])) {
         }
 
         // Consulta preparada para insertar datos en la base de datos
-        $query = "UPDATE libros SET id_titulo = ?, cantidad_disponible = ?, num_edicion = ?, precio = ?, ISBN = ?, librero=? WHERE id_libro = ?";
+        $query = "UPDATE libros SET id_titulo = ?, cantidad_disponible = ?, num_edicion = ?, precio = ?, MeLi = ?, ISBN = ?, librero=? WHERE id_libro = ?";
         $statement = mysqli_prepare($conexion, $query);
 
         // Verificar si la preparación de la consulta tuvo éxito
@@ -48,7 +50,7 @@ if (!empty($_POST["btnmodificarBook"])) {
         }
        
         // Vincular los parámetros
-        mysqli_stmt_bind_param($statement, "iiiiisi", $id_titulo, $cantidad, $edicion, $precio, $isb, $librero, $id_libro);
+        mysqli_stmt_bind_param($statement, "iiiisisi", $id_titulo, $cantidad, $edicion, $precio, $MeLi, $isb, $librero, $id_libro);
 
         // Ejecutar la consulta
         $result = mysqli_stmt_execute($statement);

@@ -40,6 +40,10 @@
                             <input type="number" class="form-control" name="precio" placeholder="Precio del libro" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">MeLi</label>
+                            <input type="text" class="form-control" name="meli" placeholder="Meli" required>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">ISBN</label>
                             <input type="number" class="form-control" name="isbn" placeholder="ISBN" required>
                         </div>
